@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "react-router-dom"
 import { BookOpenIcon, GraduationCapIcon, UsersIcon, CalendarIcon, PhoneIcon, HomeIcon } from "lucide-react"
 
 import {
@@ -8,7 +9,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
 const academicPrograms: { title: string; href: string; description: string }[] = [
@@ -82,9 +82,9 @@ export function Navbar() {
                 <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] p-2">
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
-                      <a
+                      <Link
                         className="from-primary/20 to-primary/10 flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-4 no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6"
-                        href="/"
+                        to="/"
                       >
                         <div className="mb-2 text-lg font-medium sm:mt-4 text-primary">
                           Sunrise School
@@ -92,7 +92,7 @@ export function Navbar() {
                         <p className="text-muted-foreground text-sm leading-tight">
                           Excellence in Education, Character, and Community
                         </p>
-                      </a>
+                      </Link>
                     </NavigationMenuLink>
                   </li>
                   <ListItem href="/about" title="About Our School">
@@ -157,36 +157,36 @@ export function Navbar() {
                 <ul className="grid w-[300px] gap-4 p-2">
                   <li>
                     <NavigationMenuLink asChild>
-                      <a href="/admissions/apply">
+                      <Link to="/admissions/apply">
                         <div className="font-medium">Apply Now</div>
                         <div className="text-muted-foreground">
                           Start your application process.
                         </div>
-                      </a>
+                      </Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                      <a href="/admissions/requirements">
+                      <Link to="/admissions/requirements">
                         <div className="font-medium">Requirements</div>
                         <div className="text-muted-foreground">
                           Learn about admission criteria.
                         </div>
-                      </a>
+                      </Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                      <a href="/admissions/tuition">
+                      <Link to="/admissions/tuition">
                         <div className="font-medium">Tuition & Fees</div>
                         <div className="text-muted-foreground">
                           Understand our pricing structure.
                         </div>
-                      </a>
+                      </Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                      <a href="/admissions/scholarships">
+                      <Link to="/admissions/scholarships">
                         <div className="font-medium">Scholarships</div>
                         <div className="text-muted-foreground">
                           Explore financial aid opportunities.
                         </div>
-                      </a>
+                      </Link>
                     </NavigationMenuLink>
                   </li>
                 </ul>
@@ -202,16 +202,16 @@ export function Navbar() {
                 <ul className="grid w-[200px] gap-4 p-2">
                   <li>
                     <NavigationMenuLink asChild>
-                      <a href="/news">Latest News</a>
+                      <Link to="/news">Latest News</Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                      <a href="/events">Upcoming Events</a>
+                      <Link to="/events">Upcoming Events</Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                      <a href="/calendar">School Calendar</a>
+                      <Link to="/calendar">School Calendar</Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                      <a href="/newsletter">Newsletter</a>
+                      <Link to="/newsletter">Newsletter</Link>
                     </NavigationMenuLink>
                   </li>
                 </ul>
@@ -227,16 +227,16 @@ export function Navbar() {
                 <ul className="grid w-[200px] gap-4 p-2">
                   <li>
                     <NavigationMenuLink asChild>
-                      <a href="/contact">General Contact</a>
+                      <Link to="/contact">General Contact</Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                      <a href="/contact/admissions">Admissions Office</a>
+                      <Link to="/contact/admissions">Admissions Office</Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                      <a href="/contact/faculty">Faculty Directory</a>
+                      <Link to="/contact/faculty">Faculty Directory</Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                      <a href="/contact/visit">Schedule a Visit</a>
+                      <Link to="/contact/visit">Schedule a Visit</Link>
                     </NavigationMenuLink>
                   </li>
                 </ul>
@@ -258,12 +258,12 @@ function ListItem({
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
-        <a href={href}>
+        <Link to={href}>
           <div className="text-sm leading-none font-medium">{title}</div>
           <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   )
